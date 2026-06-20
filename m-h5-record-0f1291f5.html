@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 内容聚合与资讯服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            background-color: #f4f0e6;
+            color: #2d2a24;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+        .page {
+            max-width: 820px;
+            margin: 60px auto;
+            background: #fffbf5;
+            padding: 50px 55px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.04);
+            border-radius: 2px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            border-left: 8px solid #b8a68b;
+            padding-left: 22px;
+            margin-bottom: 16px;
+            color: #2d2a24;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #7b7266;
+            margin-top: -6px;
+            margin-bottom: 32px;
+            padding-left: 30px;
+            font-style: italic;
+        }
+        .intro {
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+            text-align: justify;
+        }
+        blockquote {
+            margin: 28px 0 28px 0;
+            padding: 20px 28px;
+            background-color: #ede9df;
+            border-left: 6px solid #b8a68b;
+            color: #3d382f;
+            font-style: normal;
+            border-radius: 1px;
+            font-size: 0.98rem;
+        }
+        blockquote p {
+            margin-bottom: 6px;
+        }
+        blockquote a {
+            color: #3a4f3c;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+        }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 30px;
+            margin: 32px 0 28px;
+        }
+        .feature-item {
+            flex: 1 1 180px;
+            min-width: 140px;
+            background: #faf7f0;
+            padding: 18px 16px 16px;
+            border: 1px solid #e3dcd0;
+            border-radius: 2px;
+        }
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #3d382f;
+        }
+        .feature-item p {
+            font-size: 0.92rem;
+            color: #4f4940;
+        }
+        .usage-note {
+            background: #f1ece2;
+            padding: 18px 24px;
+            margin: 30px 0 22px;
+            border: 1px dashed #c6bcaa;
+            border-radius: 2px;
+        }
+        .usage-note p {
+            margin-bottom: 6px;
+        }
+        .faq-summary {
+            margin: 32px 0 12px;
+        }
+        .faq-summary details {
+            border-bottom: 1px solid #ddd6c8;
+            padding: 12px 4px;
+            cursor: pointer;
+        }
+        .faq-summary details:first-of-type {
+            border-top: 1px solid #ddd6c8;
+        }
+        .faq-summary summary {
+            font-weight: 500;
+            font-size: 0.98rem;
+            color: #3d382f;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .faq-summary summary::before {
+            content: "▹";
+            margin-right: 10px;
+            color: #b8a68b;
+            font-size: 1.2rem;
+        }
+        .faq-summary p {
+            margin: 8px 0 4px 22px;
+            font-size: 0.92rem;
+            color: #4f4940;
+        }
+        .closing {
+            margin-top: 30px;
+            padding-top: 18px;
+            border-top: 1px solid #e3dcd0;
+            font-size: 0.95rem;
+            color: #6b6255;
+        }
+        a {
+            color: #3a4f3c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        a:hover {
+            background-color: #e8e0d2;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .page {
+                padding: 30px 24px;
+                margin: 30px auto;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 16px;
+            }
+            .subhead {
+                padding-left: 18px;
+                font-size: 0.92rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 16px;
+            }
+            blockquote {
+                padding: 16px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>雷速 · 资讯与内容聚合</h1>
+    <div class="subhead">从关键词出发，连接多维信息</div>
+
+    <p class="intro">
+        在信息碎片化的时代，如何快速捕捉到有深度、有组织的主题内容，是许多读者与信息获取者的真实需求。 
+        <strong>雷速</strong> 并不提供一个封闭的答案，而是尝试通过语义聚合与内容导航，将分散在不同角落的优质信息编织成一张可读的网络。
+        其逻辑并非简单罗列链接，而是围绕主题关键词，呈现结构化、上下文连贯的内容集合。
+    </p>
+
+    <blockquote>
+        <p>举个例子，当你想了解“雷速”这个关键词背后所承载的内容生态——无论是赛事动态、文化观察，还是产品讨论——<a href="https://m-h5-leisu.com">雷速</a> 所提供的，是一套经过筛选与关联的信息视图。</p>
+        <p style="margin-top:8px;">它更像是数字世界里的文献卡片柜，每一张卡片都指向一个真实的文章、报道或讨论片段。</p>
+    </blockquote>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>内容摘要</h3>
+            <p>每条信息以摘要形式呈现，帮助你快速判断是否深入阅读，节省筛选时间。</p>
+        </div>
+        <div class="feature-item">
+            <h3>主题关联</h3>
+            <p>同一关键词下，不同来源、不同角度的内容被自然地编排在一起，形成相对完整的认知拼图。</p>
+        </div>
+        <div class="feature-item">
+            <h3>克制的呈现</h3>
+            <p>版面注重可读性，不堆砌广告或诱导元素，让注意力回归信息本身。</p>
+        </div>
+    </div>
+
+    <div class="usage-note">
+        <p><strong>使用建议</strong> · 如果你正在做某个主题的快速调研，或是想了解一个概念背后的多元讨论，不妨从 <a href="https://m-h5-leisu.com">雷速</a> 入手。</p>
+        <p>它适合作为一种“信息起点”而非终点——你可以基于摘要决定是否进一步访问原始来源。建议搭配笔记工具使用，将关键线索收藏、批注。</p>
+    </div>
+
+    <div class="faq-summary">
+        <details>
+            <summary>雷速的数据来源是什么？</summary>
+            <p>内容来源于公开的资讯平台、媒体源与用户贡献的链接聚合，经由算法与编辑初步筛选。不保证绝对时效性，但力求内容来源可追溯。</p>
+        </details>
+        <details>
+            <summary>是否需要注册或付费？</summary>
+            <p>当前浏览内容摘要无需注册。部分原始链接可能需要对应平台权限或订阅。页面本身不涉及付费墙，但也不替代第三方平台的规则。</p>
+        </details>
+        <details>
+            <summary>我可以贡献内容或链接吗？</summary>
+            <p>目前主要通过算法与内部整理进行更新，未来或许会增加更开放的协作机制。现阶段保持相对克制的编辑节奏，以维持内容质量。</p>
+        </details>
+    </div>
+
+    <div class="closing">
+        <p>总而言之，<a href="https://m-h5-leisu.com">雷速</a> 更像是一个安静的阅读起点——不喧嚣，不催促，只把信息摆在你面前，由你决定走向哪里。</p>
+        <p style="margin-top: 6px;">如果你追求一种有秩序的资讯发现方式，它或许是一个值得尝试的工具。</p>
+    </div>
+</div>
+</body>
+</html>
