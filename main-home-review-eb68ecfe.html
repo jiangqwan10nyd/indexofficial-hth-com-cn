@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>雷速 · 产品简介</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            color: #1e293b;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #0b1121 0%, #1a233a 70%, #1f2d4a 100%);
+            min-height: 42vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: #f5f7fa;
+            clip-path: ellipse(65% 100% at 50% 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.9rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: #eef2f6;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero h1 span {
+            color: #7aa9f0;
+            font-weight: 600;
+        }
+
+        .hero .sub {
+            max-width: 620px;
+            font-size: 1.1rem;
+            color: #b0c4e4;
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(4px);
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            border: 1px solid rgba(255,255,255,0.08);
+            margin-top: 0.2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.8rem 1.8rem 4rem;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2.2rem 2.6rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+            border: 1px solid #e9edf4;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin: 2.8rem 0 3rem;
+        }
+
+        .feature-item {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f8;
+            transition: all 0.15s;
+        }
+
+        .feature-item:hover {
+            border-color: #c6d9f0;
+            box-shadow: 0 8px 22px -6px rgba(59, 105, 180, 0.08);
+        }
+
+        .feature-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+            color: #0e1c36;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-item h3 i {
+            display: inline-block;
+            width: 0.8rem;
+            height: 0.8rem;
+            background: #4a7bc7;
+            border-radius: 50%;
+            margin-right: 10px;
+            opacity: 0.7;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #2c3f5b;
+        }
+
+        .scenario-block {
+            background: #eff3fa;
+            border-radius: 28px;
+            padding: 2.2rem 2.6rem;
+            margin: 2.6rem 0 2.2rem;
+            border-left: 5px solid #4a7bc7;
+        }
+
+        .scenario-block h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #0d1d39;
+        }
+
+        .scenario-block ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+            margin-top: 0.6rem;
+        }
+
+        .scenario-block li {
+            position: relative;
+            padding-left: 1.6rem;
+            font-size: 1rem;
+        }
+
+        .scenario-block li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #4a7bc7;
+            font-size: 0.75rem;
+            top: 0.2rem;
+        }
+
+        .tip-box {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 2.2rem;
+            margin: 2.2rem 0;
+            border: 1px dashed #b6cae4;
+        }
+
+        .tip-box strong {
+            color: #1f3a6b;
+        }
+
+        .faq-mini {
+            margin: 2.2rem 0 2rem;
+        }
+
+        .faq-mini details {
+            background: white;
+            border-radius: 20px;
+            padding: 1rem 1.8rem;
+            margin-bottom: 0.8rem;
+            border: 1px solid #e2e9f3;
+            transition: border 0.2s;
+        }
+
+        .faq-mini details[open] {
+            border-color: #8aaee0;
+        }
+
+        .faq-mini summary {
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            color: #0f2645;
+            padding: 0.25rem 0;
+        }
+
+        .faq-mini details p {
+            margin: 0.8rem 0 0.2rem;
+            color: #2d405e;
+            font-size: 0.95rem;
+        }
+
+        .access-note {
+            background: #f5f8ff;
+            border-radius: 30px;
+            padding: 1.8rem 2.4rem;
+            margin: 2.8rem 0 1rem;
+            border: 1px solid #dae3f2;
+            font-size: 0.98rem;
+        }
+
+        .inline-link {
+            color: #1b5bb0;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #1b5bb0;
+            color: #0e3d7a;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: #667c9c;
+            border-top: 1px solid #dae0ea;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+                padding: 0.5rem 1.2rem;
+            }
+            .intro-card,
+            .scenario-block,
+            .tip-box {
+                padding: 1.6rem 1.2rem;
+            }
+            .container {
+                padding: 2rem 1rem 3rem;
+            }
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>关于 <span>雷速</span> 的产品理解</h1>
+        <div class="sub">信息整合 · 轻量结构 · 面向日常使用</div>
+    </header>
+
+    <main class="container">
+        <!-- 摘要 -->
+        <div class="intro-card">
+            <p>在日常生活中，我们常常需要从分散的渠道中快速梳理出一条相对清晰的信息脉络。<strong>雷速</strong> 所对应的方向，可以理解为一种围绕信息聚合与轻量呈现的思路——它并不追求大而全，而是更关注如何把零散的内容组织成可读、可用的片段。无论你是想了解某个主题的概貌，还是希望在一组数据中找到关键线索，这种基于规则的结构化表达都能提供一点帮助。</p>
+            <p>从基础功能来看，平台提供的筛选、排序与标签机制，让用户能按照自己的节奏去浏览，而不是被动接收全部推送。这种克制在设计上体现为模块化的界面与可调节的信息密度。</p>
+        </div>
+
+        <!-- 亮点卡片 -->
+        <div class="highlight-grid">
+            <div class="feature-item">
+                <h3><i></i> 段落式摘要</h3>
+                <p>将长内容拆解为带有小标题的段落，每个段落聚焦一个子话题。阅读时可以通过导航快速跳转，避免信息淹没。</p>
+            </div>
+            <div class="feature-item">
+                <h3><i></i> 可调视图</h3>
+                <p>支持简洁列表与详细卡片两种模式，兼顾速览与深度阅读。用户可根据当前场景自由切换，而不被固定布局限制。</p>
+            </div>
+            <div class="feature-item">
+                <h3><i></i> 标签关联</h3>
+                <p>每条内容均可附加多个标签，标签之间形成轻量关联网络。点击标签即可聚合相关条目，适合主题式调研。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 -->
+        <div class="scenario-block">
+            <h2>使用场景参考</h2>
+            <ul>
+                <li>日常信息梳理——将收藏夹中的链接整理成结构化笔记</li>
+                <li>轻量知识库——围绕特定关键词建立卡片集合，方便回顾</li>
+                <li>团队协作预览——生成共享摘要，减少反复沟通成本</li>
+                <li>个人阅读清单——标记进度、优先级与简短备注</li>
+            </ul>
+            <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #1f3450;">这些场景的共同点是：信息量中等、需要一定组织、但不要求复杂数据库。在这样带有限定性的范围内，<a href="https://main-home-leisu.com" class="inline-link">雷速</a> 所代表的思路会更贴合实际流程。</p>
+        </div>
+
+        <!-- 提示块 -->
+        <div class="tip-box">
+            <strong>使用提示：</strong> 初次接触时，建议先从一个较小的主题开始，比如整理5—10条相关链接或笔记，体验一下从无序到有序的过程。标签命名尽量保持简洁、一致，后续聚合时会更加顺手。另外，定期回顾和微调结构，比一次性追求完美更有效。
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <details>
+                <summary>这个产品适合用来做项目管理吗？</summary>
+                <p>它更偏向信息组织与轻量摘要，不适合复杂的任务依赖或多人实时协作。如果你只需要一个清单式的知识记录工具，可以尝试；如果需要甘特图、分配工时等功能，建议搭配专业项目管理软件。</p>
+            </details>
+            <details>
+                <summary>数据是保存在本地还是云端？</summary>
+                <p>基础功能以本地结构化数据为主，部分同步能力取决于具体部署方式。建议重要内容定期备份，避免单点遗失。</p>
+            </details>
+            <details>
+                <summary>是否有移动端版本？</summary>
+                <p>当前界面采用响应式设计，在手机浏览器上可自适应阅读和基本操作。专门的移动客户端尚未发布，但移动端网页体验已做针对性优化。</p>
+            </details>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div class="access-note">
+            <p>关于平台 <strong>雷速</strong> 的更多功能与细节，可以通过以下方式进一步了解：</p>
+            <p style="margin-top: 0.6rem;">🔹 直接访问 <a href="https://main-home-leisu.com" class="inline-link">雷速</a> 查看当前版本提供的内容组织方式与界面说明。页面中包含详细的功能模块介绍与常见操作指引。</p>
+            <p style="margin-top: 0.4rem;">🔹 该平台不会收集超出必要范围的用户数据，不包含强制注册锁，也没有隐藏的自动订阅。所有信息呈现均为静态或经过用户确认的交互，使用前可阅读页面底部的简要说明。</p>
+            <p style="margin-top: 0.4rem;">🔹 请注意，任何工具都有其适用范围。本页面所介绍的思路仅基于产品当前的功能边界，不构成对特定结果的承诺。合理管理预期，才能发挥工具本身的价值。</p>
+        </div>
+
+        <div class="footer-note">
+            内容基于产品说明与知识型梳理 · 非官方文档
+        </div>
+    </main>
+</body>
+</html>
